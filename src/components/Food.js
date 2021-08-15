@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import ModalComponent from "./Modal"
 
-const Food = ({ food }) => {
+const Food = ({ food, setBgColor }) => {
   const [liked, setLiked] = useState(false);
   const [modal, setModal] = useState("");
 
   const handleLeave = () => {
+    setBgColor(false)
     return setModal("");
   };
   const handleHover = () => {
-    
+    setBgColor(true)
     return setModal(renderModal());
   };
   const renderModal = () =>{

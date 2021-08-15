@@ -8,13 +8,18 @@ import FoodList from "./components/FoodList";
 
 function App() {
   const [values, setValues] = useState([]);
+  const [bg, setBg] = useState(false);
 
   useEffect(() => {
     setValues(seedData[0]);
     console.log(values);
   }, [values]);
+
+  const setBgColor = (val) => {
+    setBg(val)
+  }
   return (
-    <>
+    <div className={bg ? 'bg-dark' : null}>
       {console.log(values.id)}
       <Navbar />
       <About
@@ -29,8 +34,8 @@ function App() {
         photo={values.photo}
       />
       <KitchenList kitchenInfo={values.kitchen} />
-      <FoodList foodInfo={values.food}/>
-    </>
+      <FoodList foodInfo={values.food} setBgColor={setBgColor}/>
+    </div>
   );
 }
 
