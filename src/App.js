@@ -19,7 +19,7 @@ function App() {
     setBg(val)
   }
   return (
-    <div className={bg ? 'bg-dark' : null}>
+    <div className={bg ? 'bg-dark' : 'bg-white'}>
       {console.log(values.id)}
       <Navbar />
       <About
